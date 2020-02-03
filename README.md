@@ -1,7 +1,7 @@
 # PLCnext Node.js installation script
 
 ## In Russian
-[↓ In English](#In English)
+[↓ In English](#in-english)
 
 ### Описание
 Данный скрипт предназначен для автоматизации установки [Node.js](https://nodejs.org/en/) и менеджера процессов [pm2](https://pm2.io) для контроллеров на базе [PLCnext Technology](https://www.phoenixcontact.com/plcnext/). Во время установки контроллер должен иметь активное интернет-подключение.
@@ -48,7 +48,7 @@ chmod +x plcnext-nodejs-installer.sh
 -  [MQTT client](https://github.com/axhelp/mqtt-client-dataserver)
 
 ## In English
-[↑ На русском](#In Russian)
+[↑ На русском](#in-russian)
 
 ### Overview
 This script is intended to automate [Node.js](https://nodejs.org/en/) and [pm2](https://pm2.io) process manager installation on [PLCnext Technology](https://www.phoenixcontact.com/plcnext/) based PLC's from Phoenix Contact. PLC should have an active internet connection during the installation procedure.
