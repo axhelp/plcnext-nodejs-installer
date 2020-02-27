@@ -19,37 +19,12 @@ else
     echo "PLC offline, please check you network settings.  Aborting."; break;
 fi
 
-# Installing dependencies using Optware-ng package manager
-# https://www.plcnext-community.net/index.php?option=com_content&view=article&id=295
-echo "Installing dependencies using Optware-ng package manager please wait....."
-cd /
-wget -O - http://ipkg.nslu2-linux.org/optware-ng/bootstrap/buildroot-armeabihf-bootstrap.sh | sh &> /dev/null
-cd /opt
-export PATH=$PATH:/opt/bin:/opt/sbin
-echo "Installing gcc please wait....."
-ipkg install gcc &> /dev/null
-echo "Installing python2.7 please wait....."
-ipkg install python27 &> /dev/null
-echo "Installing make please wait....."
-ipkg install make &> /dev/null
-echo "Installing xz-utils please wait....."
-ipkg install xz-utils &> /dev/null
-
-# Checking to see if packages installed.
-echo "Checking to ensure packages were installed please wait....."
-type gcc >/dev/null 2>&1 || { echo >&2 "I require gcc but it's not installed.  Aborting."; break; }
-type python2 >/dev/null 2>&1 || { echo >&2 "I require python27 but it's not installed.  Aborting."; break; }
-type make >/dev/null 2>&1 || { echo >&2 "I require make but it's not installed.  Aborting."; break; }
-type xz >/dev/null 2>&1 || { echo >&2 "I require xz-utils but it's not installed.  Aborting."; break; }
-echo "Packages installed correctly."
-
 # Getting Node.js
 echo "Setting up Nodejs please wait....."
 cd /opt
-wget https://nodejs.org/dist/v12.14.1/node-v12.14.1-linux-armv7l.tar.xz  &> /dev/null
-xz -d node-v12.14.1-linux-armv7l.tar.xz &> /dev/null
-tar -xf node-v12.14.1-linux-armv7l.tar &> /dev/null
-rm -r node-v12.14.1-linux-armv7l.tar &> /dev/null
+wget https://nodejs.org/dist/v12.14.1/node-v12.14.1-linux-armv7l.tar.gz  &> /dev/null
+tar -xf node-v12.14.1-linux-armv7l.tar.gz &> /dev/null
+rm -r node-v12.14.1-linux-armv7l.tar.gz &> /dev/null
 mv node-v12.14.1-linux-armv7l nodejs &> /dev/null
 
 # Node.js config
